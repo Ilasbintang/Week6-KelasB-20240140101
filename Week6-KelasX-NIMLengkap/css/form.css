@@ -1,0 +1,91 @@
+/* Melengkapi css/index.css untuk halaman form */
+.columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.form-card,
+.result-panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 24px;
+}
+
+.field { margin-bottom: 18px; border: 0; }
+.field label,
+.field legend { display: block; font-weight: 600; margin-bottom: 6px; padding: 0; }
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.5px solid var(--line);
+  border-radius: 6px;
+  font: inherit;
+  color: var(--ink);
+  background: #fff;
+}
+textarea { resize: vertical; }
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid rgba(228, 87, 46, 0.25);
+  border-color: var(--accent);
+}
+
+.field.invalid input[type="text"],
+.field.invalid input[type="email"],
+.field.invalid input[type="tel"],
+.field.invalid select { border-color: var(--danger); background: var(--danger-bg); }
+.field.valid input[type="text"],
+.field.valid input[type="email"],
+.field.valid input[type="tel"],
+.field.valid select { border-color: #2e8b57; }
+
+.hint { display: block; margin-top: 4px; color: var(--muted); font-size: 0.85rem; }
+.error-text { display: block; margin-top: 4px; color: var(--danger); font-size: 0.85rem; }
+
+.radio-group { display: flex; flex-wrap: wrap; gap: 16px; }
+.radio-group label,
+.check { font-weight: 400 !important; display: inline-flex !important; align-items: center; gap: 6px; cursor: pointer; }
+
+.actions { display: flex; gap: 10px; }
+.btn-primary,
+.btn-ghost {
+  font: inherit;
+  padding: 11px 22px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1.5px solid transparent;
+}
+.btn-primary { background: var(--accent); color: #fff; font-weight: 600; }
+.btn-primary:hover { background: var(--accent-dark); }
+.btn-ghost { background: transparent; border-color: var(--line); color: var(--ink); }
+.btn-ghost:hover { background: var(--bg); }
+
+/* Panel hasil */
+.result-panel h2 { font-size: 1.1rem; display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+.badge { background: var(--ink); color: #fff; font-size: 0.8rem; padding: 2px 9px; border-radius: 99px; }
+.empty { color: var(--muted); }
+
+.feedback { padding: 14px 16px; border-radius: 8px; margin-bottom: 18px; font-size: 0.95rem; }
+.feedback[hidden] { display: none; }
+.feedback.success { background: #e5f4ec; color: #1d6b43; border: 1px solid #b6dec7; }
+.feedback.error { background: var(--danger-bg); color: var(--danger); border: 1px solid #f2c2bc; }
+.feedback strong { display: block; margin-bottom: 2px; }
+
+.peserta-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.peserta-item { border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; }
+.peserta-item .nama { font-weight: 600; }
+.peserta-item .meta { color: var(--muted); font-size: 0.88rem; }
+
+@media (max-width: 860px) {
+  .columns { grid-template-columns: 1fr; }
+}

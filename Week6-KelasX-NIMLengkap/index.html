@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katalog Produk | Week 6</title>
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">Toko Kecil</a>
+    <nav>
+      <a href="index.html" class="active" aria-current="page">Produk</a>
+      <a href="form.html">Form</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <h1>Katalog produk</h1>
+      <p>Data diambil langsung dari <code>dummyjson.com/products</code> menggunakan Fetch API.</p>
+    </section>
+
+    <!-- Status: loading -->
+    <div id="loading" class="status" role="status" hidden>
+      <span class="spinner" aria-hidden="true"></span>
+      <p>Memuat data produk...</p>
+    </div>
+
+    <!-- Status: error -->
+    <div id="error" class="status status-error" role="alert" hidden>
+      <p id="error-message">Data produk gagal dimuat.</p>
+      <button id="retry-btn" type="button">Coba lagi</button>
+    </div>
+
+    <!-- Daftar produk -->
+    <p id="count" class="count" hidden></p>
+    <section id="product-list" class="grid" aria-live="polite"></section>
+  </main>
+
+  <footer class="footer">
+    <p>Tugas Individu Week 6 &middot; Fetch API &amp; Form DOM</p>
+  </footer>
+
+  <script src="js/index.js"></script>
+</body>
+</html>
